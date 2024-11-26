@@ -2,6 +2,8 @@
 
 An AI-powered Streamlit application that helps you extract valuable insights from your videos using the Twelve Labs AI API. This tool analyzes your videos and identifies the most significant moments, providing detailed information about each "golden nugget" including descriptions, quotes, timestamps, and their significance.
 
+![Video Golden Nuggets UI](images/ui.png)
+
 ## Features
 
 - **Smart Video Analysis**: Extract top 3 "golden nuggets" from any video

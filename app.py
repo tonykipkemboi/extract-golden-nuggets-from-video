@@ -34,85 +34,102 @@ def login():
     # Custom CSS
     st.markdown("""
         <style>
-        .main {
-            padding: 2rem;
-        }
-        .title {
-            font-size: 2.5rem !important;
-            text-align: center;
+        .main-title {
+            font-size: 3.2rem !important;
+            font-weight: 700;
             color: #1E88E5;
+            text-align: center;
             margin-bottom: 1rem;
+            padding-top: 2rem;
         }
         .subtitle {
-            font-size: 1.2rem !important;
-            text-align: center;
+            font-size: 1.4rem !important;
             color: #424242;
-            margin-bottom: 2rem;
+            text-align: center;
+            margin: 1.5rem auto 3rem auto;
+            max-width: 800px;
+            line-height: 1.5;
         }
-        .feature-section {
-            padding: 1rem;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            margin: 2rem 0;
+        .feature-box {
+            background: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #e3f2fd;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
         }
-        .feature-title {
-            font-size: 1.3rem !important;
+        .feature-box:hover {
+            transform: translateY(-5px);
+            border-color: #1E88E5;
+            box-shadow: 0 5px 15px rgba(30, 136, 229, 0.1);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .feature-text {
             color: #1E88E5;
-            margin-bottom: 1rem;
+            font-weight: 500;
+            font-size: 1.1rem;
         }
-        .feature-item {
-            margin-bottom: 0.5rem;
+        .login-title {
+            font-size: 1.5rem !important;
+            color: #1E88E5;
+            text-align: center;
+            margin: 3rem 0 2rem 0;
         }
         .stButton>button {
             width: 100%;
             margin-top: 1rem;
+            height: 3rem;
+            background-color: #1E88E5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        .stButton>button:hover {
+            background-color: #1565C0;
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # Main title and description
-    st.markdown('<h1 class="title">✨ Video Golden Nuggets</h1>', unsafe_allow_html=True)
-    st.markdown(
-        '<p class="subtitle">Transform your videos into actionable insights using AI</p>',
-        unsafe_allow_html=True
-    )
+    # Add some vertical spacing at the top
+    st.markdown("<div style='padding: 1.5rem 0;'></div>", unsafe_allow_html=True)
 
-    # Create three columns for features
+    # Title and subtitle
+    st.markdown('<h1 class="main-title">✨ Video Golden Nuggets</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Transform your videos into valuable insights using AI. Extract key moments, memorable quotes, and core messages in seconds.</p>', unsafe_allow_html=True)
+
+    # Feature boxes using Streamlit columns
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.markdown("""
-            <div class="feature-section">
-                <h3 class="feature-title">🎯 Extract Key Moments</h3>
-                <p class="feature-item">• Identify valuable insights</p>
-                <p class="feature-item">• Find memorable quotes</p>
-                <p class="feature-item">• Capture core messages</p>
+            <div class="feature-box">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-text">Smart Video Analysis</div>
             </div>
         """, unsafe_allow_html=True)
 
     with col2:
         st.markdown("""
-            <div class="feature-section">
-                <h3 class="feature-title">🤖 AI-Powered Analysis</h3>
-                <p class="feature-item">• Advanced ML models</p>
-                <p class="feature-item">• Real-time processing</p>
-                <p class="feature-item">• Smart summarization</p>
+            <div class="feature-box">
+                <div class="feature-icon">⚡️</div>
+                <div class="feature-text">Real-time Processing</div>
             </div>
         """, unsafe_allow_html=True)
 
     with col3:
         st.markdown("""
-            <div class="feature-section">
-                <h3 class="feature-title">💫 Easy to Use</h3>
-                <p class="feature-item">• Simple interface</p>
-                <p class="feature-item">• Quick results</p>
-                <p class="feature-item">• Clear insights</p>
+            <div class="feature-box">
+                <div class="feature-icon">💎</div>
+                <div class="feature-text">Key Insights Extraction</div>
             </div>
         """, unsafe_allow_html=True)
 
     # Login section
-    st.markdown("---")
-    st.markdown('<h3 style="text-align: center; margin: 2rem 0;">🔑 Enter Your API Key to Access Your Videos</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 class="login-title">🔑 Enter Your API Key to Get Started</h3>', unsafe_allow_html=True)
 
     # Center the login form
     col1, col2, col3 = st.columns([1,2,1])
